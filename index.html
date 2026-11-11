@@ -30,15 +30,15 @@
         <div class="stat-chip occupancy"><span class="occupancy-ring"><b id="occupancy-value">0</b><small>%</small></span><div><small>PLÄTZE BESETZT</small><strong id="occupancy-label">Bereit zum Einsteigen</strong></div></div>
       </div>
       <div class="controls-card">
-        <div class="card-head"><div><div class="eyebrow">FAHRTSTEUERUNG</div><h2>Bedienpult</h2></div><button id="lights-button" class="icon-button active" aria-label="Lichter umschalten" title="Lichter umschalten"><span>✦</span></button></div>
-        <div class="ride-status"><span id="status-dot" class="status-dot"></span><span id="ride-status">BETRIEBSBEREIT</span><span id="phase-time" class="phase-time">—</span></div>
+        <div class="card-head"><div><div class="eyebrow">FAHRTSTEUERUNG</div><h2>Bedienpult</h2></div><button id="lights-button" class="icon-button active" aria-label="Lichter umschalten" aria-pressed="true" title="Lichter umschalten (L)"><span>✦</span></button></div>
+        <div class="ride-status" aria-live="polite"><span id="status-dot" class="status-dot"></span><span id="ride-status">BETRIEBSBEREIT</span><span id="phase-time" class="phase-time">—</span></div>
         <button id="start-button" class="start-button"><span class="button-play">▶</span><span><b id="start-label">Fahrt starten</b><small id="start-sub">12 Gäste warten</small></span><span class="button-arrow">↗</span></button>
         <button id="stop-button" class="stop-button" disabled><span>■</span> Fahrt sicher abbremsen <kbd>ESC</kbd></button>
         <div class="control-divider"></div>
         <div class="speed-heading"><label for="speed-slider">FAHRTGESCHWINDIGKEIT</label><span><b id="speed-value">72</b><small> %</small></span></div>
-        <input id="speed-slider" class="speed-slider" type="range" min="30" max="100" value="72" aria-label="Fahrtgeschwindigkeit" />
+        <input id="speed-slider" class="speed-slider" type="range" min="30" max="100" value="72" aria-label="Fahrtgeschwindigkeit" aria-valuetext="72 Prozent" />
         <div class="range-labels"><span>GEMÜTLICH</span><span>ADRENALIN</span></div>
-        <div class="control-footer"><span><span class="keycap">SPACE</span> START / STOP</span><span><span class="mini-star">✦</span> MAX. 12 PLÄTZE</span></div>
+        <div class="control-footer"><span><span class="keycap">SPACE</span> START / STOP</span><span><span class="mini-star">✦</span> L LICHTER · 12 PLÄTZE</span></div>
       </div>
       <div class="bottom-left"><span class="bottom-logo">✦</span><span>GUTE FAHRT &amp; VIEL SPASS!</span><span class="bottom-dash"></span><span>OPERATOR MODUS</span></div>
       <div id="toast" class="toast" aria-live="polite"></div>
