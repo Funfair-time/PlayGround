@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#090913" />
+  <link rel="icon" href="data:," />
+  <title>NEON FLUX — 3D Pinball</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game" aria-label="3D Neon Flux Pinball Automat"></canvas>
+    <div class="vignette"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Neon Flux Startseite"><span class="brand-mark">N<span>F</span></span><span class="brand-name">NEON<span>FLUX</span><small>ARCADE · NO. 07</small></span></a>
+      <div class="top-center"><span class="live-dot"></span><span id="statusLabel">BEREIT ZUM START</span></div>
+      <button class="sound-toggle" id="soundToggle" aria-label="Sound einschalten" title="Sound ein/aus"><span class="sound-icon">♪</span><span id="soundText">SOUND AN</span></button>
+    </header>
+
+    <section class="scoreboard" aria-label="Spielstand">
+      <div class="score-card main-score"><span class="eyebrow">PUNKTESTAND</span><strong id="score">00000000</strong><div class="score-glow"></div></div>
+      <div class="score-card"><span class="eyebrow">BALL</span><strong class="balls" id="balls">● <i>●</i> <i>●</i></strong><small id="ballCount">3 VERSUCHE</small></div>
+      <div class="score-card multiplier-card"><span class="eyebrow">MULTIPLIKATOR</span><strong id="multiplier">×1</strong><div class="multiplier-meter"><span id="comboMeter"></span></div></div>
+    </section>
+
+    <div class="side-label side-left"><span>PINBALL // 1986</span><i></i><span>VOL. 01</span></div>
+    <div class="side-label side-right"><span>HIGH SCORE</span><strong id="highScore">00000000</strong></div>
+
+    <div class="callout" id="callout" aria-live="polite"><span class="callout-line"></span><strong id="calloutText">READY?</strong><span class="callout-line"></span></div>
+
+    <div class="overlay" id="startOverlay">
+      <div class="modal-card start-card">
+        <div class="modal-kicker"><span class="live-dot"></span> PLAYER 01 · TABLE 07</div>
+        <h1>LIGHTS.<br /><em>FLIPPERS.</em><br />ACTION.</h1>
+        <p>Ein Tisch. Drei Kugeln. Hol dir den Highscore.</p>
+        <button class="primary-button" id="startButton"><span>SPIEL STARTEN</span><b>↗</b></button>
+        <div class="control-hint"><span><kbd>A</kbd><kbd>D</kbd> FLIPPER</span><span><kbd>SPACE</kbd> KUGEL LADEN</span></div>
+      </div>
+    </div>
+
+    <div class="overlay hidden" id="endOverlay">
+      <div class="modal-card end-card">
+        <div class="modal-kicker"><span class="live-dot"></span> GAME OVER</div>
+        <h2>NICHT<br /><em>VORBEI.</em></h2>
+        <p>Dein Run ist Geschichte. Der nächste Highscore wartet.</p>
+        <div class="final-score"><span>DEIN SCORE</span><strong id="finalScore">00000000</strong></div>
+        <button class="primary-button" id="restartButton"><span>NOCH EINE RUNDE</span><b>↗</b></button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" aria-live="polite">+1.000</div>
+
+    <footer class="bottom-ui">
+      <div class="table-meta"><span class="meta-icon">✳</span><span>NEON FLUX <b>PINBALL MACHINE</b></span></div>
+      <div class="mobile-controls" aria-label="Touch-Steuerung">
+        <button class="touch-control left-control" id="leftControl" aria-label="Linken Flipper betätigen">◀<small>FLIP</small></button>
+        <button class="launch-control" id="launchControl" aria-label="Kugel starten"><span class="launch-ring">↗</span><small>LAUNCH</small></button>
+        <button class="touch-control right-control" id="rightControl" aria-label="Rechten Flipper betätigen">▶<small>FLIP</small></button>
+      </div>
+      <div class="bottom-right"><span>© 1986 / 2024</span><span class="separator">✳</span><span>INSERT COIN TO PLAY</span></div>
+    </footer>
+    <div class="scanlines"></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
